@@ -26,6 +26,13 @@ app.get("/health", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    is_success: true,
+    official_email: EMAIL
+  });
+});
+
 app.post("/bfhl", async (req, res) => {
   try {
     const body = req.body;
